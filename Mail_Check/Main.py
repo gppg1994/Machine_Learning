@@ -23,7 +23,7 @@ try:
             print('Please logout from all of your account while configuring...')
             time.sleep(3)
             c.configure()
-    fp = open(r'config.txt', 'r')
+    fp = open(r'config.dat', 'r')
     [username, password] = fp.readline().split(',')
     browser = webdriver.Edge()
     browser.get(r'yahoo.co.in')
