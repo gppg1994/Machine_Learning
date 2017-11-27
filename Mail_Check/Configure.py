@@ -4,7 +4,7 @@ import csv
 class Configure:
     def check(self):
         try:
-            fp = open('config.txt', 'r')
+            fp = open('config.dat', 'r')
             flag = 1
         except Exception as e:
             flag = -1
@@ -12,7 +12,7 @@ class Configure:
 
     def create(self):
         try:
-            fp = open('config.txt', 'w')
+            fp = open('config.dat', 'w')
             flag = 1
             fp.close()
         except Exception as e:
@@ -21,7 +21,7 @@ class Configure:
 
     def configure(self):
         try:
-            fp = open('config.txt', 'a')
+            fp = open('config.dat', 'a')
             username = input('Enter username: ')
             password = input('Enter password: ')
             fp.write(username + ',' + password + '\n')
@@ -34,7 +34,7 @@ class Configure:
     def read(self):
         try:
             accounts = []
-            with open('config.txt', 'r') as csvfile:
+            with open('config.dat', 'r') as csvfile:
                 rows = csv.reader(csvfile)
                 for row in rows:
                     accounts.append(row)
